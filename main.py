@@ -19,13 +19,13 @@ def caesar(start_text, shift_amount, cipher_direction):
 from art import logo
 print(logo)
 
-#TODO-4: Can you figure out a way to ask the user if they want to restart the cipher program?
-#e.g. Type 'yes' if you want to go again. Otherwise type 'no'.
-#If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again?
-#Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. 
+cont_cipher = "yes"
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
+while cont_cipher == "yes":
 
-caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+
+  caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+  cont_cipher = input("Would you like to restart the cipher? yes/no\n").lower()
