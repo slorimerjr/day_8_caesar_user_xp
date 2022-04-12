@@ -2,6 +2,8 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 def caesar(start_text, shift_amount, cipher_direction):
   end_text = ""
+  if shift_amount >= 26:
+    shift_amount %= 26
   if cipher_direction == "decode":
     shift_amount *= -1
   for char in start_text:  
